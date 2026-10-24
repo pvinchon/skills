@@ -1,0 +1,17 @@
+[tools]
+node = "22"
+"npm:skills" = "latest"
+
+[tasks.init]
+description = "Create a new skill under skills/"
+usage = 'arg "<name>" help="Skill name, lowercase and hyphenated"'
+dir = "{{config_root}}/skills"
+run = 'skills init "$usage_name"'
+
+[tasks.install]
+description = "Install this checkout's skills for your agents (extra arguments go to skills add)"
+run = "skills add . --global"
+
+[tasks.list]
+description = "List the skills the skills CLI discovers in this repository"
+run = "skills add . --list"
